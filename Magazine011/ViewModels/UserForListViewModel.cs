@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Magazine011.ViewModel
+namespace Magazine011.ViewModels
 {
     public class UserForListViewModel
     {

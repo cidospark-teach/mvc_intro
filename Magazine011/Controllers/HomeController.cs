@@ -18,6 +18,7 @@ namespace Magazine011.Controllers
             _logger = logger;
         }
 
+        // Home/Index
         public IActionResult Index()
         {
             return View();
@@ -33,5 +34,12 @@ namespace Magazine011.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpGet]
+        public IActionResult NotFound()
+        {
+            return View();
+        }
+
     }
 }

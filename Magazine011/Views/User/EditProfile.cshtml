@@ -1,0 +1,43 @@
+﻿@model EditProfileViewModel
+
+@{
+    ViewData["title"] = "Edit Profile page";
+    var userPhoto = "~/images";
+        userPhoto += string.IsNullOrEmpty(Model.Photo) ? "/user-avatar.png" : Model.Photo;
+}
+
+
+<div class="myContainer" id="user-profile">
+
+    <h1>@Model.Name's Profile</h1>
+    <div class="myFlex">
+        <div class="profile-pix">
+            <a asp-action="ChangeProfilePix" asp-controller="User" asp-route-userId="@Model.Id">
+                <img src="@userPhoto" asp-append-version="true" />
+            </a>
+        </div>
+        <div class="user-info">
+            <form method="post" asp-action="EditProfile" asp-controller="User">
+                <div class="form-group-control">
+                    <input asp-for="Id" hidden />
+                </div>
+
+                <span asp-validation-for="Name"></span>
+                <div class="form-group-control">
+                    <label asp-for="Name">Name:</label>
+                    <input asp-for="Name" />
+                </div>
+
+                <span asp-validation-for="Role"></span>
+                <div class="form-group-control">
+                    <label asp-for="Role">Role:</label>
+                    <input asp-for="Role" />
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

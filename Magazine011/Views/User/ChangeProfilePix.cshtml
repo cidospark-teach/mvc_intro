@@ -1,0 +1,28 @@
+﻿@model ProfilePixViewModel
+
+@{
+    ViewData["title"] = "Change Profile Pix";
+    var userPhoto = "~/images";
+    userPhoto += string.IsNullOrEmpty(Model.Photo) ? "/user-avatar.png" : Model.Photo;
+}
+
+
+<div class="myContainer text-center" id="user-profile">
+
+    <h1>@Model.Name's Profile Pix</h1>
+    <div class="myFlex center-box">
+        <form method="post" asp-action="ChangeProfilePix" enctype="multipart/form-data"
+              asp-controller="User" style="width:220px; margin:40px auto;">
+            <div class="profile-pix">
+                <img src="@userPhoto" asp-append-version="true" />
+            </div>
+            <div class="form-group-control mt-3"><input asp-for="Pix" /></div>
+            <div class="form-group-control">
+                <input asp-for="Id" hidden />
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Upload Pix</button>
+        </form>
+                
+    </div>
+
+</div>

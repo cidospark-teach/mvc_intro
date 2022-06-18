@@ -2,7 +2,8 @@
 
 @{
     ViewData["title"] = "Profile page";
-    var userPhoto = string.IsNullOrEmpty(Model.Photo) ? "~/images/user-avatar.png" : Model.Photo;
+    var userPhoto = "~/images";
+    userPhoto += string.IsNullOrEmpty(Model.Photo) ? "/user-avatar.png" : Model.Photo;
 }
 
 
@@ -11,7 +12,9 @@
     <h1>@Model.Name's Profile</h1>
     <div class="myFlex">
         <div class="profile-pix">
-            <img src="@userPhoto" asp-append-version="true" />
+            <a asp-action="ChangeProfilePix" asp-controller="User" asp-route-userId="@Model.Id">
+                <img src="@userPhoto" asp-append-version="true" />
+            </a>
         </div>
         <div class="user-info">
             <div><strong>ID:</strong> @Model.Id</div>
@@ -24,9 +27,10 @@
         </div>
     </div>
     <div>
-        <form method="post" asp-action="EditProfile" asp-controller="User">
-            <button>EDIT USER</button>
-        </form>
+        <a asp-action="EditProfile" asp-controller="User"
+           asp-route-userId="@Model.Id" class="btn btn-primary">
+            EDIT USER
+        </a>
     </div>
 
 </div>

@@ -113,3 +113,6 @@ a{
 .myFlex{
     display:flex;
 }
+.center-box{
+    justify-content:center;
+}

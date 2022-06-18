@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using Magazine011.Models;
-using Magazine011.ViewModel;
+using Magazine011.ViewModels;
 
 namespace Magazine011.Settings
 {
@@ -11,6 +11,9 @@ namespace Magazine011.Settings
         {
             CreateMap<User, UserForListViewModel>();
             CreateMap<User, UserDetailViewModel>();
+            CreateMap<User, EditProfileViewModel>(); // getting
+            CreateMap<AddUserViewModel, User>(); // posting
+            CreateMap<User, ProfilePixViewModel>(); // posting
         }
     }
 }

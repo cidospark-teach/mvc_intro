@@ -2,7 +2,7 @@
 using AutoMapper;
 using Magazine011.Data;
 using Magazine011.Services;
-using Magazine011.ViewModel;
+using Magazine011.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 

@@ -7,5 +7,8 @@ namespace Magazine011.Services
     {
         public List<User> Users { get; }
         public User GetUserById(string id);
+        public User GetUserByEmail(string email);
+        public bool UpdateUser(User user);
+        public string AddUser(User user);
     }
 }

@@ -1,0 +1,56 @@
+﻿@model AddUserViewModel
+
+@{
+    ViewData["title"] = "Add User page";
+    var userPhoto = "~/images/user-avatar.png";
+}
+
+
+<div class="myContainer" id="user-profile">
+
+    <h1>ADD New User</h1>
+    <div class="myFlex">
+        <div class="profile-pix">
+            <img src="@userPhoto" asp-append-version="true" />
+        </div>
+        <div class="user-info">
+            @*<div asp-validation-summary="All"></div>*@
+
+            <form method="post" asp-action="Register" asp-controller="User">
+
+                <span asp-validation-for="Name"></span>
+                <div class="form-group-control">
+                    <label asp-for="Name">Name:</label>
+                    <input asp-for="Name" />
+                </div>
+
+                <span asp-validation-for="Email"></span>
+                <div class="form-group-control">
+                    <label asp-for="Email">Email:</label>
+                    <input asp-for="Email" />
+                </div>
+                <span asp-validation-for="Password"></span>
+                <div class="form-group-control">
+                    <label asp-for="Password">Passwprd:</label>
+                    <input asp-for="Password" />
+                </div>
+
+                <span asp-validation-for="ConfirmPassword"></span>
+                <div class="form-group-control">
+                    <label asp-for="ConfirmPassword">ConfirmPassword:</label>
+                    <input asp-for="ConfirmPassword" />
+                </div>
+
+                <span asp-validation-for="Role"></span>
+                <div class="form-group-control">
+                    <label asp-for="Role">Role:</label>
+                    <input asp-for="Role" />
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

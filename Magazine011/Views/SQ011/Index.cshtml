@@ -13,6 +13,12 @@
 </div>
 
 <div class="myContainer">
+    <div class="form-group-control mb-3">
+        <a asp-action="Register" asp-controller="User" class="btn btn-primary">
+            ADD NEW USER
+        </a>
+    </div>
+
     @foreach (var member in Model)
     {
     <a asp-controller="User" class="card-shadow" asp-action="Profile" asp-route-userId="@member.Id">

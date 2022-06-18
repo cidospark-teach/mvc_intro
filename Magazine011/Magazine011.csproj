@@ -16,7 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\SQ011\" />
-    <Folder Include="ViewModel\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="Data\" />
     <Folder Include="Services\" />
     <Folder Include="Settings\" />
